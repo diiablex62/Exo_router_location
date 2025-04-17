@@ -47,7 +47,9 @@ const Listings = () => {
 
   return (
     <div>
-      <h1>Listings</h1>
+      <h1 className='text-white text-3xl font-bold my-6'>
+        Logements disponibles
+      </h1>
       <div className='flex flex-wrap gap-4'>
         {listings.map((listing) => (
           <Card key={listing.id} listing={listing} />

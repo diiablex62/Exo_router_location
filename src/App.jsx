@@ -19,8 +19,9 @@ function App() {
       } `}>
       <Header toggleMode={toggleMode} mode={mode} />
       <main className='flex-grow'>
+      
         <Outlet />
-        <Reviews /> 
+        <Reviews />
       </main>
       <Footer />
     </div>
