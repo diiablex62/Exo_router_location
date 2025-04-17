@@ -1,8 +1,8 @@
 import React from "react";
 import Header from "./components/Header";
-import Listings from "./pages/Listings";
-import Reviews from "./components/Reviews";
 import Footer from "./components/Footer";
+import Reviews from "./components/Reviews";
+import { Outlet } from "react-router-dom";
 import { useState } from "react";
 
 function App() {
@@ -19,8 +19,8 @@ function App() {
       } `}>
       <Header toggleMode={toggleMode} mode={mode} />
       <main className='flex-grow'>
-        <Listings />
-        <Reviews />
+        <Outlet />
+        <Reviews /> 
       </main>
       <Footer />
     </div>
