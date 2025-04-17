@@ -1,13 +1,19 @@
 import { Menu } from "lucide-react";
 import { FaSun } from "react-icons/fa6";
 import { FaMoon } from "react-icons/fa";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Header = ({ mode, toggleMode }) => {
   return (
     <header className='bg-white shadow-md p-4 flex justify-between items-center'>
       {/* Logo */}
-      <h1 className='text-xl font-bold text-red-500'>Airbed & Breakfast</h1>
+      <NavLink
+        to='/'
+        className={({ isActive }) =>
+          isActive ? "text-red-500 font-bold" : "text-red-500"
+        }>
+        <h1 className='text-xl font-bold'>Airbed & Breakfast</h1>
+      </NavLink>
 
       {/* Catégories */}
       <div className='flex flex-row'>
