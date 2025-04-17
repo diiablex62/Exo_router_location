@@ -1,3 +1,5 @@
+import React from "react";
+
 const Login = () => {
   return (
     <div className='p-6 max-w-md mx-auto bg-white rounded-lg shadow-md'>
@@ -32,7 +34,7 @@ const Login = () => {
         <button
           type='submit'
           className='w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700'>
-          Se connecter
+          Envoyer
         </button>
       </form>
     </div>

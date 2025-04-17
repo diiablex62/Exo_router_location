@@ -1,3 +1,4 @@
+import React from "react";
 import Header from "./components/Header";
 import Listings from "./pages/Listings";
 import Reviews from "./components/Reviews";
@@ -18,7 +19,7 @@ function App() {
       } `}>
       <Header toggleMode={toggleMode} mode={mode} />
       <main className='flex-grow'>
-        <Listings mode={mode} />
+        <Listings />
         <Reviews />
       </main>
       <Footer />

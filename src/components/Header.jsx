@@ -1,7 +1,7 @@
 import { Menu } from "lucide-react";
 import { FaSun } from "react-icons/fa6";
 import { FaMoon } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 const Header = ({ mode, toggleMode }) => {
   return (
