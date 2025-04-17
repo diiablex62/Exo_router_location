@@ -1,58 +1,50 @@
 import { Menu } from "lucide-react";
 import { FaSun } from "react-icons/fa6";
 import { FaMoon } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 
-const Header = ({ user, mode, toggleUser, toggleHome, toggleMode }) => {
+const Header = ({ mode, toggleMode }) => {
   return (
-    <header className="bg-white shadow-md p-4 flex justify-between items-center">
+    <header className='bg-white shadow-md p-4 flex justify-between items-center'>
       {/* Logo */}
-      <h1 className="text-xl font-bold text-red-500">Airbed & Breakfast</h1>
+      <h1 className='text-xl font-bold text-red-500'>Airbed & Breakfast</h1>
 
       {/* Catégories */}
-      <div className="flex flex-row">
-        {user ? (
-          <nav className="hidden md:flex space-x-6 items-center">
-            <a
-              href="#"
-              className="text-gray-600 hover:text-black"
-              onClick={toggleHome}
-            >
-              Maisons
-            </a>
-            <a
-              href="#"
-              className="text-gray-600 hover:text-black"
-              onClick={toggleHome}
-            >
-              Appartements
-            </a>
-            <a href="#" className="text-gray-600 hover:text-black">
-              Villas
-            </a>
-            <a
-              href="#"
-              className="text-gray-600 hover:text-black"
-              onClick={toggleUser}
-            >
-              Deconnexion
-            </a>
-          </nav>
-        ) : (
-          <nav className="hidden md:flex space-x-6">
-            <a
-              href="#"
-              className="text-gray-600 hover:text-black"
-              onClick={toggleUser}
-            >
-              Connexion
-            </a>
-          </nav>
-        )}
-        <a href="#" className="text-xl ml-6" onClick={toggleMode}>
+      <div className='flex flex-row'>
+        <nav className='hidden md:flex space-x-6 items-center'>
+          <NavLink
+            to='/maisons'
+            className={({ isActive }) =>
+              isActive
+                ? "text-black font-bold"
+                : "text-gray-600 hover:text-black"
+            }>
+            Maisons
+          </NavLink>
+          <NavLink
+            to='/villas'
+            className={({ isActive }) =>
+              isActive
+                ? "text-black font-bold"
+                : "text-gray-600 hover:text-black"
+            }>
+            Villas
+          </NavLink>
+          <NavLink
+            to='/login'
+            className={({ isActive }) =>
+              isActive
+                ? "text-black font-bold"
+                : "text-gray-600 hover:text-black"
+            }>
+            Login
+          </NavLink>
+        </nav>
+        <button className='text-xl ml-6' onClick={toggleMode}>
           {!mode ? <FaSun /> : <FaMoon />}
-        </a>
+        </button>
         {/* Menu Burger (Mobile) */}
-        <button className="md:hidden">
+        <button className='md:hidden'>
           <Menu size={28} />
         </button>
       </div>

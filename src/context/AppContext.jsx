@@ -1,8 +1,7 @@
-import React, { createContext, useState } from "react";
+import React, { useState } from "react";
+import { AppContext } from "./AppContextInstance";
 
-export const AppContext = createContext();
-
-export const AppProvider = ({ children }) => {
+export const AppContextProvider = ({ children }) => {
   const [user, setUser] = useState(false);
   const [home, setHome] = useState(false);
   const [mode, setMode] = useState(false);
@@ -25,3 +24,5 @@ export const AppProvider = ({ children }) => {
     </AppContext.Provider>
   );
 };
+
+export default AppContextProvider;
