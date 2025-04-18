@@ -8,7 +8,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    login(); // Met à jour l'état et le localStorage pour indiquer que l'utilisateur est connecté
+    login(); 
     navigate("/");
   };
 
