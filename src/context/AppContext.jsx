@@ -3,11 +3,14 @@ import { AppContext } from "./AppContextInstance";
 
 export const AppContextProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(() => {
-    // Récupérer l'état de connexion depuis le localStorage
     const savedStatus = localStorage.getItem("isLoggedIn");
     return savedStatus === "true";
   });
-  const [mode, setMode] = useState(false);
+  const [mode, setMode] = useState(() => {
+    // Définir le thème clair par défaut
+    const savedMode = localStorage.getItem("mode");
+    return savedMode === "dark" ? false : true; // Clair par défaut
+  });
 
   const listings = [
     {
@@ -59,20 +62,21 @@ export const AppContextProvider = ({ children }) => {
 
   const login = (status = true) => {
     setIsLoggedIn(status);
-    localStorage.setItem("isLoggedIn", status); // Enregistrer dans le localStorage
+    localStorage.setItem("isLoggedIn", status);
   };
 
   const logout = () => {
     setIsLoggedIn(false);
-    localStorage.setItem("isLoggedIn", "false"); // Mettre à jour le localStorage
+    localStorage.setItem("isLoggedIn", "false");
   };
 
   const toggleMode = () => {
-    setMode(!mode);
+    const newMode = !mode;
+    setMode(newMode);
+    localStorage.setItem("mode", newMode ? "light" : "dark");
   };
 
   useEffect(() => {
-    // Synchroniser l'état avec le localStorage au chargement
     const savedStatus = localStorage.getItem("isLoggedIn");
     if (savedStatus === "true") {
       setIsLoggedIn(true);

@@ -21,8 +21,11 @@ function App() {
             <Reviews />
           </>
         ) : (
-          <div className='text-center text-white mt-10'>
-            <p>Il faut être connecté</p>
+          <div
+            className={`text-center mt-10 ${
+              mode ? "text-black" : "text-white"
+            }`}>
+            <p>Il faut être connecté pour accéder aux logements</p>
           </div>
         )}
       </main>
