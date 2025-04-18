@@ -4,8 +4,12 @@ import { AppContext } from "./AppContextInstance";
 export const AppContextProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const login = () => {
-    setIsLoggedIn(true);
+  const login = (status = true) => {
+    setIsLoggedIn(status);
+  };
+
+  const logout = () => {
+    setIsLoggedIn(false);
   };
 
   return (
@@ -13,6 +17,7 @@ export const AppContextProvider = ({ children }) => {
       value={{
         isLoggedIn,
         login,
+        logout,
       }}>
       {children}
     </AppContext.Provider>

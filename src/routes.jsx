@@ -13,15 +13,7 @@ export const router = createBrowserRouter([
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
-      {
-        path: "/",
-        element: (
-          <>
-            <Listings />
-            <Reviews />
-          </>
-        ),
-      },
+      { path: "/", element: <Listings /> },
       { path: "/reviews", element: <Reviews /> },
       { path: "/maisons", element: <Maisons /> },
       { path: "/villas", element: <Villas /> },
