@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { AppContext } from "../context/AppContextInstance";
 
 const Header = () => {
-  const { isLoggedIn, login } = useContext(AppContext);
+  const { isLoggedIn, login, toggleMode, mode } = useContext(AppContext);
 
   const handleLogout = () => {
     login(false); // Déconnecte l'utilisateur
@@ -66,8 +66,8 @@ const Header = () => {
             </NavLink>
           )}
         </nav>
-        <button className='text-xl ml-6'>
-          <FaSun />
+        <button className='text-xl ml-6' onClick={toggleMode}>
+          {!mode ? <FaSun /> : <FaMoon />}
         </button>
         {/* Menu Burger (Mobile) */}
         <button className='md:hidden'>

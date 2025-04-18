@@ -5,12 +5,14 @@ const Villas = () => {
     {
       id: "1",
       name: "Villa Luxe",
-      image: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/295090917.jpg?k=d17621b71b0eaa0c7a37d8d8d02d33896cef75145f61e7d96d296d88375a7d39&o=&hp=1",
+      image:
+        "https://cf.bstatic.com/xdata/images/hotel/max1024x768/295090917.jpg?k=d17621b71b0eaa0c7a37d8d8d02d33896cef75145f61e7d96d296d88375a7d39&o=&hp=1",
     },
     {
       id: "2",
       name: "Villa Bord de Mer",
-      image: "https://media.lesechos.com/api/v1/images/view/67f5336ac543af9efe079388/1280x720/01402096953667-web-tete.jpg",
+      image:
+        "https://media.lesechos.com/api/v1/images/view/67f5336ac543af9efe079388/1280x720/01402096953667-web-tete.jpg",
     },
   ];
 

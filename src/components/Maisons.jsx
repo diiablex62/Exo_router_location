@@ -5,12 +5,14 @@ const Maisons = () => {
     {
       id: "1",
       name: "Maison de Campagne",
-      image: "https://www.viving.fr/wp-content/uploads/2016/02/Cre%CC%81dit-APLA-Laure-Pettier-840a.jpg",
+      image:
+        "https://www.viving.fr/wp-content/uploads/2016/02/Cre%CC%81dit-APLA-Laure-Pettier-840a.jpg",
     },
     {
       id: "2",
       name: "Maison Moderne",
-      image: "https://www.depreux-construction.com/wp-content/uploads/2022/11/maison-moderne-nos-modeles-plans-idees-amenagement.jpg",
+      image:
+        "https://www.depreux-construction.com/wp-content/uploads/2022/11/maison-moderne-nos-modeles-plans-idees-amenagement.jpg",
     },
   ];
 

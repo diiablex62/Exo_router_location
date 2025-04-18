@@ -6,12 +6,12 @@ import { Outlet } from "react-router-dom";
 import { AppContext } from "./context/AppContextInstance";
 
 function App() {
-  const { isLoggedIn } = useContext(AppContext);
+  const { isLoggedIn, mode } = useContext(AppContext);
 
   return (
     <div
       className={`min-h-screen flex flex-col ${
-        isLoggedIn ? "bg-gray-100" : "bg-gray-800"
+        mode ? "bg-gray-100" : "bg-gray-800"
       } `}>
       <Header />
       <main className='flex-grow'>
