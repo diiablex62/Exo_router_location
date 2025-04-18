@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { AppContext } from "../context/AppContextInstance";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const { login } = useContext(AppContext);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    login(); // Met à jour l'état pour indiquer que l'utilisateur est connecté
+    navigate("/");
+  };
+
   return (
     <div className='p-6 max-w-md mx-auto bg-white rounded-lg shadow-md'>
       <h2 className='text-2xl font-semibold mb-4'>Connexion</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className='mb-4'>
           <label
             htmlFor='username'

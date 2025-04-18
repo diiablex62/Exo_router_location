@@ -3,7 +3,7 @@ import { FaSun } from "react-icons/fa6";
 import { FaMoon } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
-const Header = ({ mode, toggleMode }) => {
+const Header = () => {
   return (
     <header className='bg-white shadow-md p-4 flex justify-between items-center'>
       {/* Logo */}
@@ -46,8 +46,8 @@ const Header = ({ mode, toggleMode }) => {
             Login
           </NavLink>
         </nav>
-        <button className='text-xl ml-6' onClick={toggleMode}>
-          {!mode ? <FaSun /> : <FaMoon />}
+        <button className='text-xl ml-6'>
+          <FaSun />
         </button>
         {/* Menu Burger (Mobile) */}
         <button className='md:hidden'>

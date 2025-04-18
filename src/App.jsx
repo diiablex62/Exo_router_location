@@ -1,24 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Reviews from "./components/Reviews";
 import { Outlet } from "react-router-dom";
-import { useState } from "react";
+import { AppContext } from "./context/AppContextInstance";
 
 function App() {
-  const [mode, setMode] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); 
-
-  const toggleMode = () => {
-    setMode(!mode);
-  };
+  const { isLoggedIn } = useContext(AppContext);
 
   return (
     <div
       className={`min-h-screen flex flex-col ${
-        mode ? "bg-gray-100" : "bg-gray-800"
+        isLoggedIn ? "bg-gray-100" : "bg-gray-800"
       } `}>
-      <Header toggleMode={toggleMode} mode={mode} />
+      <Header />
       <main className='flex-grow'>
         {isLoggedIn ? (
           <>
