@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { AppContext } from "./AppContextInstance";
 
 export const AppContextProvider = ({ children }) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(() => {
+    // Récupérer l'état de connexion depuis le localStorage
+    const savedStatus = localStorage.getItem("isLoggedIn");
+    return savedStatus === "true";
+  });
   const [mode, setMode] = useState(false);
 
   const listings = [
@@ -55,15 +59,25 @@ export const AppContextProvider = ({ children }) => {
 
   const login = (status = true) => {
     setIsLoggedIn(status);
+    localStorage.setItem("isLoggedIn", status); // Enregistrer dans le localStorage
   };
 
   const logout = () => {
     setIsLoggedIn(false);
+    localStorage.setItem("isLoggedIn", "false"); // Mettre à jour le localStorage
   };
 
   const toggleMode = () => {
     setMode(!mode);
   };
+
+  useEffect(() => {
+    // Synchroniser l'état avec le localStorage au chargement
+    const savedStatus = localStorage.getItem("isLoggedIn");
+    if (savedStatus === "true") {
+      setIsLoggedIn(true);
+    }
+  }, []);
 
   return (
     <AppContext.Provider
@@ -73,7 +87,7 @@ export const AppContextProvider = ({ children }) => {
         logout,
         mode,
         toggleMode,
-        listings, // Ajout de la liste globale
+        listings,
       }}>
       {children}
     </AppContext.Provider>

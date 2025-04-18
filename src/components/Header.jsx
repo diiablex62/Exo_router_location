@@ -9,7 +9,7 @@ const Header = () => {
   const { isLoggedIn, login, toggleMode, mode } = useContext(AppContext);
 
   const handleLogout = () => {
-    login(false); // Déconnecte l'utilisateur
+    login(false); 
   };
 
   return (
