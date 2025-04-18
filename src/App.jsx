@@ -7,6 +7,7 @@ import { useState } from "react";
 
 function App() {
   const [mode, setMode] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false); 
 
   const toggleMode = () => {
     setMode(!mode);
@@ -19,9 +20,16 @@ function App() {
       } `}>
       <Header toggleMode={toggleMode} mode={mode} />
       <main className='flex-grow'>
-      
-        <Outlet />
-        <Reviews />
+        {isLoggedIn ? (
+          <>
+            <Outlet />
+            <Reviews />
+          </>
+        ) : (
+          <div className='text-center text-white mt-10'>
+            <p>Il faut être connecté</p>
+          </div>
+        )}
       </main>
       <Footer />
     </div>

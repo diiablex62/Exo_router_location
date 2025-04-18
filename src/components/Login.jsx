@@ -7,15 +7,15 @@ const Login = () => {
       <form>
         <div className='mb-4'>
           <label
-            htmlFor='email'
+            htmlFor='username'
             className='block text-sm font-medium text-gray-700'>
-            Email
+            Nom d'utilisateur
           </label>
           <input
-            type='email'
-            id='email'
+            type='text'
+            id='username'
             className='mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200'
-            placeholder='Entrez votre email'
+            placeholder='Entrez votre nom d’utilisateur'
           />
         </div>
         <div className='mb-4'>
