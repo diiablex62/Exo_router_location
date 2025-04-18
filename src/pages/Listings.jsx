@@ -10,6 +10,7 @@ const Listings = () => {
       title: "Villa de Luxe",
       location: "Nice, France",
       price: "250",
+      type: "Duplex",
     },
     {
       id: 2,
@@ -18,6 +19,7 @@ const Listings = () => {
       title: "Chalet Montagne",
       location: "Chamonix, France",
       price: "180",
+      type: "Studio",
     },
     {
       id: 3,
@@ -26,6 +28,7 @@ const Listings = () => {
       title: "Maison Bohème",
       location: "Bordeaux, France",
       price: "120",
+      type: "Studio",
     },
     {
       id: 4,
@@ -34,6 +37,7 @@ const Listings = () => {
       title: "Loft Design",
       location: "Paris, France",
       price: "300",
+      type: "Duplex",
     },
     {
       id: 5,
@@ -42,6 +46,7 @@ const Listings = () => {
       title: "Cabane en forêt",
       location: "Lille, France",
       price: "90",
+      type: "Studio",
     },
   ];
 
